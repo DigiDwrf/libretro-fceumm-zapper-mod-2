@@ -2206,6 +2206,13 @@ void get_mouse_input(unsigned port, uint32_t *zapdata)
    }
 }
 
+void get_lightgun_input(unsigned port, uint32_t* zapdata)
+{
+    int i = 0;
+    for (i = 0; i < 2; i++)
+        zapdata[i] = input_cb(port, RETRO_DEVICE_LIGHTGUN, 0, lightgunmap[i].retro);
+}
+
 static void FCEUD_UpdateInput(void)
 {
    unsigned player, port;
