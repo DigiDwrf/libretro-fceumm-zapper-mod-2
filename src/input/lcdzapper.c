@@ -31,7 +31,7 @@ static uint8 FP_FASTAPASS(1) ReadLCDCompZapper(int w)
     uint8 ret = 0;
     if (ZD[w].trigger)
         ret |= 0x10;
-    if (!ZD[w].detect)
+    if (ZD[w].detect)
         ret |= 0x8;
     return ret;
 }
